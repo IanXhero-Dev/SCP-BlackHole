@@ -8,7 +8,9 @@ public class Swarm {
     public int iterations;
 
     // Metodos
-    public Star generateNewStar() {
+    private Star generateNewStar() {
         return;
     }
+
+    public 
 }

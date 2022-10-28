@@ -1,4 +1,4 @@
-import javax.swing.text.Position;
+import java.lang.Math;
 
 public class Star {
     // Atributos
@@ -25,18 +25,17 @@ public class Star {
     }
 
     public void movement(Star bh) {
-        float xj;
-        for (int i=0; i<posicion.length; i++){
-            xj=
+        double xj;
+        for (int i = 0; i < posicion.length; i++) {
+            xj = posicion[i] + Math.random() * (bh.getPosicion(i) - posicion[i]);
+            posicion[i] = transform(xj);
         }
     }
 
-    private int transform(float resultado) {
-
+    private int transform(double resultado) {
+        int posicion_final;
+        resultado = 1 / (1 + Math.pow(Math.E, resultado));
+        posicion_final = (resultado >= 0.70) ? 1 : 0;
+        return posicion_final;
     }
-
-    public eventHorizon(){
-
-    }
-
 }
