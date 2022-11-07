@@ -5,6 +5,13 @@ public class Star {
     private int[] posicion;
     private int fitness;
 
+    // Constructor
+    public Star() {
+        for (int i = 0; i < 6; i++) {
+            posicion[i] = (Math.random() > 0.5) ? 1 : 0;
+        }
+    }
+
     // Metodos
     public void setPosicion(int[] position) {
         posicion = position;

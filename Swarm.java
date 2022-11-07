@@ -9,8 +9,19 @@ public class Swarm {
 
     // Metodos
     private Star generateNewStar() {
-        return;
+        return new Star();
     }
 
-    public 
+    public void eventHorizon() {
+        int suma = 0;
+        for (Star l : constelacion) {
+            suma = suma + l.getFitness();
+        }
+        int R = blackhole.getFitness() / suma;
+
+    }
+
+    public void beginAlgorithm() {
+
+    }
 }
