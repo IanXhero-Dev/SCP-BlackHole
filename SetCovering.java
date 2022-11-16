@@ -21,17 +21,17 @@ public class SetCovering {
     public boolean validate(Star star) {
         boolean validated;
         int cont = 0; // Suma 1 por cada linea de restriccion que es cubierta
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < restriction.length; i++) {
             int suma = 0; // Suma de star por la restriccion i
-            for (int j = 0; j < 6; j++) {
+            for (int j = 0; j < restriction[0].length; j++) {
                 suma = suma + (star.getPosicion(j) * restriction[i][j]);
             }
             if (suma >= 1) {
                 cont = cont + 1; // restriccion i cubierta
             }
         }
-        validated = (cont == 5) ? true : false; // Si cont es igual a "m", todas las restricciones del problema estan
-                                                // cubiertas.
+        validated = (cont == restriction.length) ? true : false; // Si cont es igual a "m", todas las restricciones
+                                                                 // del problema estan cubiertas.
 
         return validated;
     }

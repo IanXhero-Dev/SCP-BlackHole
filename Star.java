@@ -3,11 +3,11 @@ import java.lang.Math;
 public class Star {
     // Atributos
     private int[] posicion;
-    private int fitness;
+    private int fitness = 0;
 
     // Constructor
-    public Star() {
-        for (int i = 0; i < 6; i++) {
+    public Star(int n) {
+        for (int i = 0; i < n; i++) {
             posicion[i] = (Math.random() > 0.5) ? 1 : 0;
         }
     }
@@ -22,8 +22,8 @@ public class Star {
     }
 
     public void setFitness(SetCovering scp) {
-        for (int i = 0; i < 6; i++) {
-            fitness = fitness + scp.getCost(i) * posicion[i];
+        for (int i = 0; i < posicion.length; i++) {
+            fitness = fitness + (scp.getCost(i) * posicion[i]);
         }
     }
 
