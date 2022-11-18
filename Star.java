@@ -21,6 +21,10 @@ public class Star {
         return posicion[index];
     }
 
+    public int[] getFullPosition() {
+        return posicion;
+    }
+
     public void setFitness(SetCovering scp) {
         for (int i = 0; i < posicion.length; i++) {
             fitness = fitness + (scp.getCost(i) * posicion[i]);
@@ -31,12 +35,20 @@ public class Star {
         return fitness;
     }
 
-    public void movement(Star bh) {
+    public void movement(Star bh, SetCovering scp) {
         double xj;
         for (int i = 0; i < posicion.length; i++) {
             xj = posicion[i] + Math.random() * (bh.getPosicion(i) - posicion[i]);
             posicion[i] = transform(xj);
         }
+        /*
+         * Validacion. En caso de que no sea valido se llama a la misma funcion de forma
+         * recursiva hasta que lo sea segun el SCP
+         */
+        if (scp.validate(this) == false) {
+            movement(bh, scp);
+        }
+
     }
 
     private int transform(double resultado) {

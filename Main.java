@@ -15,7 +15,7 @@ public class Main {
          */
         SetCovering problema = new SetCovering(coste, restricciones);
         Swarm inicio = new Swarm(4, coste.length, problema);
-        inicio.beginAlgorithm(problema);
+        inicio.beginAlgorithm(problema, coste.length);
 
     }
 }
