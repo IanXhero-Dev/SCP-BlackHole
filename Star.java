@@ -7,6 +7,7 @@ public class Star {
 
     // Constructor
     public Star(int n) {
+        this.posicion = new int[n];
         for (int i = 0; i < n; i++) {
             posicion[i] = (Math.random() > 0.5) ? 1 : 0;
         }
@@ -38,6 +39,7 @@ public class Star {
     public void movement(Star bh, SetCovering scp) {
         double xj;
         for (int i = 0; i < posicion.length; i++) {
+            System.out.println(posicion[i] + Math.random() * (bh.getPosicion(i) - posicion[i]));
             xj = posicion[i] + Math.random() * (bh.getPosicion(i) - posicion[i]);
             posicion[i] = transform(xj);
         }
@@ -46,7 +48,7 @@ public class Star {
          * recursiva hasta que lo sea segun el SCP
          */
         if (scp.validate(this) == false) {
-            movement(bh, scp);
+            // movement(bh, scp);
         }
 
     }

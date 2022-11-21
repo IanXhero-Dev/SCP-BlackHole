@@ -9,12 +9,13 @@ public class Main {
                 { 0, 0, 0, 1, 0, 1 },
                 { 0, 1, 0, 0, 1, 1 }
         };
+        int iterations = 3;
         /*
          * Estos datos son de prueba para el algoritmo, posteriormente se vera un metodo
          * para diferentes instancias.
          */
         SetCovering problema = new SetCovering(coste, restricciones);
-        Swarm inicio = new Swarm(4, coste.length, problema);
+        Swarm inicio = new Swarm(4, coste.length, problema, iterations);
         inicio.beginAlgorithm(problema, coste.length);
 
     }
