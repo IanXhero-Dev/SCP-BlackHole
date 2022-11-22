@@ -47,8 +47,9 @@ public class Swarm {
             if (blackhole.getFitness() == 0) {// Caso inicial, el blackhole toma los valores de la primera estrella
                 blackhole = star;
             } else if (star.getFitness() < blackhole.getFitness() && blackhole.getFitness() != 0) {
-                blackhole = star; // Caso normal, si la estrella tiene un fitness mas bajo que el blackhole, lo
-                                  // reemplaza
+                blackhole = star;
+                // Caso normal, si la estrella tiene un fitness mas bajo que el blackhole, lo
+                // reemplaza
             }
             System.out.println("El fitness inicial de la estrella es: " + star.getFitness());
         }
@@ -83,7 +84,6 @@ public class Swarm {
             }
             System.out.println("El fitness del BlackHole es: " + blackhole.getFitness());
             T = T + 1;
-            System.out.println(T);
         }
         System.out.println("-----------------------------------------------------------------");
         System.out.println("Fin del algoritmo: ");

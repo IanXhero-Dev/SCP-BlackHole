@@ -9,7 +9,7 @@ public class Main {
                 { 0, 0, 0, 1, 0, 1 },
                 { 0, 1, 0, 0, 1, 1 }
         };
-        int iterations = 3;
+        int iterations = 4;
         /*
          * Estos datos son de prueba para el algoritmo, posteriormente se vera un metodo
          * para diferentes instancias.

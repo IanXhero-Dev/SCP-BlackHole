@@ -39,24 +39,25 @@ public class Star {
     public void movement(Star bh, SetCovering scp) {
         double xj;
         for (int i = 0; i < posicion.length; i++) {
-            System.out.println(posicion[i] + Math.random() * (bh.getPosicion(i) - posicion[i]));
-            xj = posicion[i] + Math.random() * (bh.getPosicion(i) - posicion[i]);
+            xj = posicion[i] + (Math.random() * (bh.getPosicion(i) - posicion[i]));
             posicion[i] = transform(xj);
         }
+        // System.out.println(scp.validate(this));
         /*
          * Validacion. En caso de que no sea valido se llama a la misma funcion de forma
          * recursiva hasta que lo sea segun el SCP
          */
         if (scp.validate(this) == false) {
-            // movement(bh, scp);
+            movement(bh, scp);
         }
 
     }
 
     private int transform(double resultado) {
         int posicion_final;
-        resultado = 1 / (1 + Math.pow(Math.E, resultado));
-        posicion_final = (resultado >= 0.70) ? 1 : 0;
+        double resultados = 1 / (1 + Math.pow(Math.E, -resultado));
+        // System.out.println(resultados);
+        posicion_final = (resultados >= 0.70) ? 1 : 0;
         return posicion_final;
     }
 }
